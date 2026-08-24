@@ -56,7 +56,7 @@ def main() -> None:
     print("Testing power amplifier...")
 
     def measure_power(target: str, power: int) -> int:
-            return power
+        return power
 
     amplified = power_amplifier(measure_power, 3)
 
