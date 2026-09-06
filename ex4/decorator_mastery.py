@@ -108,7 +108,64 @@ def unreliable_spell() -> str:
     raise Exception("Spell failed")
 
 
-def main():
+"""
+def test_data() -> None:
+    test_powers = [16, 18, 26, 28]
+    spell_names = ["heal", "earthquake", "freeze", "shield"]
+    mage_names = ["Ash", "River", "Sage", "Alex", "Storm", "Luna"]
+    invalid_names = ["Jo", "A", "Alex123", "Test@Name"]
+
+    print("Testing spell timer...")
+    result = fireball()
+    print(f"Result: {result}")
+
+    print("\nTesting standalone power validator...")
+
+    @power_validator(20)
+    def cast_arcane(power: int) -> str:
+        return f"Arcane explosion with power {power}"
+
+    print(cast_arcane(power=test_powers[2]))
+    print(cast_arcane(power=test_powers[0]))
+
+    print("\nTesting retrying spell...")
+    # Test retry on permanent failure
+    result = unreliable_spell()
+    print(result)
+
+    # Test retry on temporary failure (succeeds on attempt 2)
+    attempts = 0
+
+    @retry_spell(3)
+    def temporary_failing_spell() -> str:
+        nonlocal attempts
+        attempts += 1
+        if attempts < 2:
+            raise Exception("Temporary disruption")
+        return "Spell cast successfully on attempt 2!"
+
+    print(temporary_failing_spell())
+
+    print("Waaaaaaagh spelled !")
+
+    print("\nTesting MageGuild staticmethod...")
+    print(
+          f"Valid name '{mage_names[0]}':",
+          MageGuild.validate_mage_name(mage_names[0])
+         )
+    print(
+          f"Invalid name '{invalid_names[3]}':",
+          MageGuild.validate_mage_name(invalid_names[3])
+         )
+
+    print("\nTesting MageGuild cast_spell...")
+    guild = MageGuild()
+    print(guild.cast_spell(spell_names[0], test_powers[0]))
+    print(guild.cast_spell(spell_names[1], 5))
+"""
+
+
+def main() -> None:
     print("Testing spell timer...")
     result = fireball()
     print(f"Result: {result}")
@@ -131,3 +188,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+#   test_data()
