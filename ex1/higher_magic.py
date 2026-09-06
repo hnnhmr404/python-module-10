@@ -55,16 +55,19 @@ def test_data() -> None:
     print("Output:", combined)
 
     print("\n=== Testing power_amplifier ===")
-    amplified = power_amplifier(fireball, multiplier=3)(test_targets[1], test_values[0])
+    amp_func = power_amplifier(fireball, multiplier=3)
+    amplified = amp_func(test_targets[1], test_values[0])
     print("Output:", amplified)
 
     print("\n=== Testing conditional_caster ===")
-    check = conditional_caster(lambda target, power: power >= test_values[1], fireball)
+    cond = lambda target, power: power >= test_values[1]
+    check = conditional_caster(cond, fireball)
     print("Valid (Power 12 >= 9):", check(test_targets[2], test_values[2]))
     print("Invalid (Power 5 < 9):", check(test_targets[2], test_values[0]))
 
     print("\n=== Testing spell_sequence ===")
-    sequence = spell_sequence([fireball, heal])(test_targets[3], test_values[2])
+    seq_func = spell_sequence([fireball, heal])
+    sequence = seq_func(test_targets[3], test_values[2])
     print("Output:", sequence)
 """
 
