@@ -62,6 +62,37 @@ def spell_dispatcher() -> Callable[[Any], str]:
     return spell
 
 
+"""
+def test_data() -> None:
+    spell_powers = [16, 14, 43, 44, 25, 44]
+    operations = ['add', 'multiply', 'max', 'min']
+    fibonacci_tests = [13, 12, 13]
+
+    print("\n\nTesting spell_reducer...")
+    for op in operations:
+        result = spell_reducer(spell_powers, op)
+        print(f"Operation '{op}': {result}")
+
+    print("\nTesting partial_enchanter...")
+    def dummy_enchant(power: int, element: str, target: str = "Dummy") -> str:
+        return f"{element.capitalize()} enchant on {target} with power {power}"
+
+    enchanters = partial_enchanter(dummy_enchant)
+    print("Fire:", enchanters["fire"]("Dragon"))
+    print("Ice:", enchanters["ice"]("Shield"))
+
+    print("\nTesting memoized_fibonacci...")
+    for n in fibonacci_tests:
+        print(f"Fib({n}): {memoized_fibonacci(n)}")
+    print("\nTesting spell_dispatcher...")
+    dispatcher = spell_dispatcher()
+    print("Damage:", dispatcher(spell_powers[0]))
+    print("Enchantment:", dispatcher(operations[0]))
+    print("Multi-cast:", dispatcher(spell_powers))
+    print("Unknown (Float):", dispatcher(3.14))
+"""
+
+
 def main() -> None:
     print("Testing spell reducer...")
     spells = [10, 20, 30, 40]
@@ -85,3 +116,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+#   test_data()
